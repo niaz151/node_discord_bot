@@ -74,6 +74,33 @@ client.on('message', msg => {
   }
 
 
+  /* ########## OW STATS ##########  */
+
+  if(command === 'ow-sr'){
+
+    if(args.length === 0){
+      msg.reply("Missing search query")
+    }
+
+    const base = "https://ow-api.com/v1/stats/pc/us/"
+    var username = args[0]
+    var endpoint = base+username+"/profile"
+
+    request(endpoint, (erorr,response,body) => {
+
+      var info = JSON.parse(body)
+      var tank_sr = info['ratings'][0]['level']
+      var dps_sr = info['ratings'][1]['level']      
+      var healer_sr = info['ratings'][2]['level']
+
+      msg.channel.send(
+        'Tank: ' + tank_sr + "\n" +
+        'Damange: ' + dps_sr + "\n" + 
+        'Healer: ' + healer_sr + "\n" 
+      )
+    })
+  }
+
 
 })
 
