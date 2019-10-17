@@ -19,6 +19,9 @@ client.on('ready', () => {
 
 client.on('message', msg => {
 
+  // ONLY TAKE COMMANDS STARTING WITH ! AND IGNORE MESSAGES FROM BOT ITSELF
+  if (!msg.content.startsWith('!') || msg.author.bot) return;
+
   // SPLIT INPUT INTO ARGS AND INITIAL COMMAND
   const args = msg.content.slice(1).split(' ');
   const command = args.shift().toLowerCase();
@@ -124,6 +127,52 @@ client.on('message', msg => {
     }
    }
 
+
+   if(command === 'track'){
+
+
+    // IF MISSING BOTH ARGUEMENTS
+    if(args.length === 0){
+      msg.reply("Missing champion name and summoner spell name")
+    }
+   }
+
+   // IF MISSING SUMMONER SPELL ARGUEMENT
+   if(args.length === 1){
+     msg.reply("Missing summoner spell name")
+   }
+
+   // IF INVALID SUMMONER SPELL ARGUEMENT
+   var options = ['f','e','i','h']
+   if (!options.includes(args[1])){
+     msg.reply("Enter a valid summoner spell name")
+   }
+
+   switch(args[1]){
+
+    case 'f':
+      var time = 300000
+      setTimeout( () => msg.reply(args[0] + " flash is now live"),time)
+      break;
+
+    case 'h':
+        var time = 240000
+        setTimeout( () => msg.reply(args[0] + " heal is now live"), time)
+        break;
+
+    case 'e':
+      var time = 210000
+      setTimeout( () => msg.reply(args[0] + " exhaust is now live"),time)
+      break;
+
+    case 'i':
+      var time = 180000
+      setTimeout( () => msg.reply(args[0] + " ignite is now live"),time)
+      break;
+   
+    default:
+      break;
+  }
 
   /* ########## OVERWATCH STATS ##########  */
 
