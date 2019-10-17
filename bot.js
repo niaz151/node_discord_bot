@@ -10,7 +10,7 @@ const client = new Discord.Client();
 var ganks_top = 0
 var ganks_mid = 0
 var ganks_bot = 0
-
+var date = new Date().getDate()
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -19,6 +19,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
 
+  // SPLIT INPUT INTO ARGS AND INITIAL COMMAND
   const args = msg.content.slice(1).split(' ');
   const command = args.shift().toLowerCase();
   
@@ -54,6 +55,7 @@ client.on('message', msg => {
   
   if(command === 'gif'){
 
+    // IF MISSING QUERY
     if(args.length === 0){
       msg.reply("Missing search query")
     }
@@ -74,12 +76,62 @@ client.on('message', msg => {
   }
 
 
-  /* ########## OW STATS ##########  */
+   /* ########## LEAGUE OF LEGENDS GANKS ##########  */
+  
+   if(command === 'gank'){
+
+    // IF MISSING LANE 
+    if(args.length === 0){
+      msg.reply('Missing lane description')
+    }
+    
+    // IF INVALID LANE 
+    var options = ['t','m','b']
+    if(! options.includes(args[0])){
+      msg.reply('Enter a valid lane abbreviation')
+    }
+
+    else{
+
+      // DAILY RESET 
+      var today = new Date().getDate()
+      if(today != date){
+        ganks_top = 0
+        ganks_mid = 0
+        ganks_bot = 0
+      }
+
+      switch(args[0]){
+
+        case 't':
+          ganks_top += 1
+          msg.channel.send("Ganks Top: " + ganks_top)
+          break;
+  
+        case 'm':
+          ganks_mid += 1
+          msg.channel.send("Ganks Mid: " + ganks_mid)
+          break;
+  
+        case 'b': 
+          ganks_bot += 1
+          msg.channel.send("Ganks Bot: " + ganks_bot)
+          break;
+  
+        default:
+          break;
+      }  
+    }
+   }
+
+
+  /* ########## OVERWATCH STATS ##########  */
 
   if(command === 'ow-sr'){
 
+    // IF MISSING USERNAME
     if(args.length === 0){
-      msg.reply("Missing search query")
+      msg.reply("Missing username")
     }
 
     const base = "https://ow-api.com/v1/stats/pc/us/"
