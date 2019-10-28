@@ -15,7 +15,7 @@ Output: Makes a request to [this](https://icanhazdadjoke.com/api) api and return
 
 Input: ```!gif keyword```
 
-Output: Makes a request to [this] (https://developers.giphy.com/) api ( also used by Facebook Messenger and iMessage ) and retuns a gif associated with the user-provided keyword
+Output: Makes a request to [this](https://developers.giphy.com/) api ( also used by Facebook Messenger and iMessage ) and retuns a gif associated with the user-provided keyword
 
 
 **Die Roll**
