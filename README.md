@@ -6,28 +6,37 @@ A pure Node.JS application currently hosted via AWS EC2 and available for downlo
 
 **Jokes** 
 
-Input: ```!joke```
+Command: ```!joke```
 
-Output: Makes a request to [this](https://icanhazdadjoke.com/api) api and returns a random joke
+Makes a request to [this](https://icanhazdadjoke.com/api) api and returns a random joke
 
 
 **Gif Request**
 
-Input: ```!gif keyword```
+Command: ```!gif keyword```
 
-Output: Makes a request to [this](https://developers.giphy.com/) api ( also used by Facebook Messenger and iMessage ) and retuns a gif associated with the user-provided keyword
+Makes a request to [this](https://developers.giphy.com/) api ( also used by Facebook Messenger and iMessage ) and retuns a gif associated with the user-provided keyword
 
 
 **Die Roll**
 
-Input: ```!die-roll```
+Command: ```!die-roll```
 
-Output: A simple 1-6 random number generation tool
+A simple 1-6 random number generation tool
 
 ### Game Specific Features ###
 
 1. League of Legends Summoner Spell Tracking
 
+Command: ```!track champion first-letter-of-summoner-spell```
+
+Sends a message to the user once the summoner spell is for use to the specified enemy champion, assuming the command was entered as soon as the spell was used
+
 2. League of Legends Gank Counter
+
+Command: ```!gank first-letter-of-lane```
+
+Updates the daily count for ganks in the specified lane and sends it to the user
+
 
 3. Overwatch Stat Fetcher 
