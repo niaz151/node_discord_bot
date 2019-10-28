@@ -26,17 +26,16 @@ A simple 1-6 random number generation tool
 
 ### Game Specific Features ###
 
-1. League of Legends Summoner Spell Tracking
+**League of Legends Summoner Spell Tracking**
 
 Command: ```!track champion first-letter-of-summoner-spell```
 
 Sends a message to the user once the summoner spell is for use to the specified enemy champion, assuming the command was entered as soon as the spell was used
 
-2. League of Legends Gank Counter
+**League of Legends Gank Counter**
 
 Command: ```!gank first-letter-of-lane```
 
 Updates the daily count for ganks in the specified lane and sends it to the user
 
-
-3. Overwatch Stat Fetcher 
+**Overwatch Stat Fetcher**
