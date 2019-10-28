@@ -8,19 +8,21 @@ A pure Node.JS application currently hosted via AWS EC2 and available for downlo
 
 Input: ```!joke```
 
-Output: Makes a request to this api and returns a random joke
+Output: Makes a request to [this](https://icanhazdadjoke.com/api) api and returns a random joke
+
+
+**Gif Request**
+
+Input: ```!gif keyword```
+
+Output: Makes a request to [this] (https://developers.giphy.com/) api ( also used by Facebook Messenger and iMessage ) and retuns a gif associated with the user-provided keyword
+
 
 **Die Roll**
 
 Input: ```!die-roll```
 
 Output: A simple 1-6 random number generation tool
-
-**Gif Request**
-
-Input: ```!gif keyword```
-
-Output: Makes a request to this api ( also used by Facebook Messenger and iMessage ) and retuns a gif associated with the user-provided keyword
 
 ### Game Specific Features ###
 
