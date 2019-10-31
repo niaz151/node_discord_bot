@@ -2,7 +2,9 @@
 
 A pure Node.JS application currently hosted via AWS EC2 and available for download on Discord 
 
+
 ### General Features ###
+
 
 **Jokes** 
 
@@ -24,7 +26,9 @@ Command: ```!die-roll```
 
 A simple 1-6 random number generation tool
 
+
 ### Game Specific Features ###
+
 
 **League of Legends Summoner Spell Tracking**
 
@@ -32,10 +36,16 @@ Command: ```!track champion first-letter-of-summoner-spell```
 
 Sends a message to the user once the summoner spell is for use to the specified enemy champion, assuming the command was entered as soon as the spell was used
 
+
 **League of Legends Gank Counter**
 
 Command: ```!gank first-letter-of-lane```
 
 Updates the daily count for ganks in the specified lane and sends it to the user
 
+
 **Overwatch Stat Fetcher**
+
+Command: ```!ow-stats battle-net-username```
+
+Returns Skill Rating for each of the three roles in the Overwatch Ranked (assuming the profile is public)
