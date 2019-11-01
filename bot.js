@@ -130,13 +130,11 @@ client.on('message', msg => {
 
    if(command === 'track'){
 
-
     // IF MISSING BOTH ARGUEMENTS
     if(args.length === 0){
       msg.reply("Missing champion name and summoner spell name")
     }
-   }
-
+   
    // IF MISSING SUMMONER SPELL ARGUEMENT
    if(args.length === 1){
      msg.reply("Missing summoner spell name")
@@ -147,6 +145,8 @@ client.on('message', msg => {
    if (!options.includes(args[1])){
      msg.reply("Enter a valid summoner spell name")
    }
+
+  }
 
    switch(args[1]){
 
