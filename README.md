@@ -3,7 +3,7 @@
 A pure Node.JS application currently hosted via AWS EC2 and available for download on Discord 
 
 
-### General Features ###
+## General Features ##
 
 
 **Jokes** 
@@ -27,7 +27,7 @@ Command: ```!die-roll```
 A simple 1-6 random number generation tool
 
 
-### Game Specific Features ###
+## Game Specific Features ##
 
 
 **League of Legends Summoner Spell Tracking**
